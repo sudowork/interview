@@ -129,10 +129,27 @@
             }
         </style>
         <link href="/static/custom/index.css" rel="stylesheet"> 
-        <script src="/static/custom/video.js"></script>
 
         <% e.begin_block("body"); %>
-        <video id="capture"></video>
+        <video id="localVideo" autoplay></video>
+        <video id="remoteVideo" autoplay></video>
+
+        <div>
+          <button id="startButton">Start</button>
+          <button id="callButton">Call</button>
+          <button id="hangupButton">Hang Up</button>
+        </div>
+
+        <textarea id="dataChannelSend" disabled></textarea>
+        <textarea id="dataChannelReceive" disabled></textarea>
+
+        <div id="buttons">
+          <button id="startDataButton">Start Data</button>
+          <button id="sendDataButton">Send Data</button>
+          <button id="closeDataButton">Stop Data</button>
+        </div>
+
+        <script src="/static/custom/video.js"></script>
         <% e.end_block(); %>
 </html>
 
