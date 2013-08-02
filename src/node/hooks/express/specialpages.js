@@ -30,6 +30,12 @@ exports.expressCreateServer = function (hook_name, args, cb) {
     res.send(eejs.require("ep_etherpad-lite/templates/pad.html", {req: req}));
   });
 
+  //serve video.html under /v
+  args.app.get('/v/:pad', function(req, res, next)
+  {    
+    res.send(eejs.require("ep_etherpad-lite/templates/video.html", {req: req}));
+  });
+
   //serve timeslider.html under /p/$padname/timeslider
   args.app.get('/p/:pad/timeslider', function(req, res, next)
   {
@@ -52,4 +58,4 @@ exports.expressCreateServer = function (hook_name, args, cb) {
   });
 
 
-}
+};
